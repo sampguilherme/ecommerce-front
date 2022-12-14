@@ -2,5 +2,8 @@
 
 Projeto proposto pela Labenu
 
-É um projeto no qual foi feito o front-end de um site e-commerce 
-de jogos digitais, usando React JS
+Front-end de um e-commerce de jogos digitais,
+onde o usuário poderá aplicar filtros de pesquisa,
+desde o nome do jogo até valor mínimo, máximo
+e entre outros filtros, 
+o usuário também pode adicionar o jogo que deseja no carrinho.

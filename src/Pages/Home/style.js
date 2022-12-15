@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DivPrincipal = styled.div`
     display: grid;
-    grid-template-columns: 9.14vw 75vw 15vw;
+    grid-template-columns: 12vw 80vw;
     text-align: center;
 `
 

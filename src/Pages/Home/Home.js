@@ -1,34 +1,20 @@
+import React from "react"
+import {Header} from "../../Components/Header/Header"
 import { useState } from "react"
-import { DivPrincipal, Filtros, Carrinho, Itens, GamesContainer, Input, Select } from "./style"
-import jogos from "../../jogos.json"
-import CardJogo from "../CardJogo/CardJogo.js"
-import { CardCarrinho } from "../CardCarrinho/CardCarrinho"
+import { DivPrincipal, Filtros, GamesContainer, Input, Select } from "./style"
+import CardJogo from "../../Components/CardJogo/CardJogo.js"
 
 
-export const Produtos = () => {
+export const Home = (props) => {
+
+    const {addToCart, games} = props
+
     const [search, setSearch] = useState("")
     const [alphabeticalOrder, setAlphabeticalOrder] = useState("")
     const [minValue, setMinValue] = useState("")
     const [maxValue, setMaxValue] = useState("")
     const [orderByValue, setOrderByValue] = useState("")
-    const [productsCart, setProductsCart] = useState([])
     
-    const [games, setGames] = useState(jogos.jogos)
-    
-    function addProduct(id) {
-        const i = productsCart.findIndex((item) => item.id === id)
-        console.log(i)
-        if (i !==  -1) {
-            productsCart[i] = {...productsCart[i], amount: productsCart[i].amount + 1}
-        } else {
-            const gameEncontrado = games.find((game) => game.id === id)
-            const newGame = {...gameEncontrado, amount: 1}
-            const newList = [...productsCart, (productsCart[1] = newGame)]
-
-            setProductsCart(newList)
-        }
-    }
-
     const renderGames = games.filter((game) => {
         return game.name.toLowerCase().includes(search.toLowerCase())
     })
@@ -74,17 +60,17 @@ export const Produtos = () => {
     })
     .map((game) => {
         return <CardJogo
+        addToCart={addToCart}
+        games={game}
         key={game.id}
-        id={game.id}
-        name={game.name}
-        price={game.price}
-        image={game.image}
-        addProduct={addProduct}
         />
     })
 
     return (
+        <>
+        <Header/>
         <DivPrincipal>
+            
             <Filtros>Filtrar
                     <Input 
                     placeholder="Nome do Jogo" 
@@ -115,8 +101,8 @@ export const Produtos = () => {
             <GamesContainer>
                 {renderGames}
             </GamesContainer>
-            <Carrinho>Carrinho</Carrinho>
         </DivPrincipal>
+        </>
     )
 }
 

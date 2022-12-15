@@ -1,6 +1,6 @@
-import { Header } from "./Components/Header/Header/Header";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
-import { Produtos } from "./Components/Produtos/Produtos";
+import Router from "./Router/Router";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -11,11 +11,20 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App() {
+  const [cart, setCart] = useState([])
+
+  const addToCart = (newProduct) => {
+      const newCart = [...cart, newProduct]
+      setCart(newCart)
+  }
+
   return (
     <>
       <GlobalStyle/>
-      <Header/>
-      <Produtos/>
+      <Router 
+        addToCart={addToCart}
+        cart={cart}
+      />
     </>
   )
 }

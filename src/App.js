@@ -13,10 +13,22 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   const [cart, setCart] = useState([])
 
-  const addToCart = (newProduct) => {
-      const newCart = [...cart, newProduct]
+  const addToCart = (productToAdd) => {
+      const newCart = [...cart]
+
+      const productFound = newCart.find((productInCart) => productInCart.id === productToAdd.id)
+
+      if(!productFound){
+        const newProduct = {...productToAdd, quantity: 1}
+        newCart.push(newProduct)
+      } else {
+        productFound.quantity++
+      }
+
       setCart(newCart)
   }
+
+  
 
   return (
     <>

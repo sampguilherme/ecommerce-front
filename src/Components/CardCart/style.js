@@ -5,14 +5,15 @@ export const Button = styled.button`
 `
 
 export const CardContainer = styled.section`
-    width: 16vw;
+    
+    width: 50vw;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 1px 1px 10px black;
 `
 
 export const Image = styled.img`
-    width: 70%;
+    width: 10%;
 `
 
 export const P = styled.p`

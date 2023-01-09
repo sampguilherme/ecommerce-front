@@ -5,7 +5,7 @@ export const Button = styled.button`
 `
 
 export const CardContainer = styled.section`
-    
+    background-color: white;
     width: 50vw;
     border-radius: 10px;
     padding: 10px;

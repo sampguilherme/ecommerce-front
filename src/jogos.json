@@ -9,13 +9,13 @@
         {
             "id": 2,
             "name": "Grand Theft Auto V",
-            "image": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fgrand-theft-auto-v%2Fhome%2FGTAV_EGS_Artwork_400x400_GameLogo-1000x1000-f6c47a98454049a5e63959f7b6f898c4fc22829c.png?h=270&resize=1&w=480",
+            "image": "https://avatars.akamai.steamstatic.com/12f88a2fba32fa69f1b2e8b76d6812cd9adaebe2_full.jpg",
             "price": 54.90
         },
         {
             "id": 3,
             "name": "Counter Strike: GO",
-            "image": "https://i.pinimg.com/474x/45/73/0b/45730ba3ffe768049af74193fdfd9ecc.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/pt/c/ce/Counter-Strike_Global_Offensive.jpg",
             "price": 24.90
         },
         {

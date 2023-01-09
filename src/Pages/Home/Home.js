@@ -1,8 +1,10 @@
 import React from "react"
 import {Header} from "../../Components/Header/Header"
 import { useState } from "react"
-import { DivPrincipal, Filtros, GamesContainer, Input, Select } from "./style"
+import { DivPrincipal, Filtros, GamesContainer, Input, Select, InputNome, DivFlex, Button, DivInput, H2 } from "./style"
 import CardJogo from "../../Components/CardJogo/CardJogo.js"
+import searchIcon from "../../Assets/search.svg"
+
 
 
 export const Home = (props) => {
@@ -71,12 +73,8 @@ export const Home = (props) => {
         <Header/>
         <DivPrincipal>
             
-            <Filtros>Filtrar
-                    <Input 
-                    placeholder="Nome do Jogo" 
-                    value={search}
-                    type="text" 
-                    onChange={(e) => setSearch(e.target.value)}/>
+            <Filtros>
+                <H2>Filtros</H2>
                     <Select value={alphabeticalOrder} onChange={(e) => setAlphabeticalOrder(e.target.value)}>
                         <option value="">Ordem alfabética</option>
                         <option value="A-Z">A-Z</option>
@@ -98,9 +96,21 @@ export const Home = (props) => {
                     onChange={(e) => setMaxValue(e.target.value)}
                     />
             </Filtros>
-            <GamesContainer>
-                {renderGames}
-            </GamesContainer>
+            <DivFlex>
+                <DivInput>
+                    <InputNome 
+                            placeholder="Nome do Jogo" 
+                            value={search}
+                            type="text" 
+                            onChange={(e) => setSearch(e.target.value)}/>
+                            <Button>
+                                <img src={searchIcon}/>
+                            </Button>
+                </DivInput>
+                <GamesContainer>
+                    {renderGames}
+                </GamesContainer>
+            </DivFlex>
         </DivPrincipal>
         </>
     )

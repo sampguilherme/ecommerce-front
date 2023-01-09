@@ -1,14 +1,21 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
+    background-color: #5A8199;
+    min-height: 100vh;
     section{
-        
-        h1, hr{
-            width: 100%;
-        }
 
         h1 {
+            margin-left: 10px;
+            color: white;
             margin-top: 32px;
+            font-family: "Inter", sans-serif;
+        }
+
+        h2 {
+            color: white;
+            font-family: "Inter", sans-serif;
+            margin-left: 10px;
         }
 
         hr {

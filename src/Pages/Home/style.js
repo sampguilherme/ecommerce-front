@@ -6,6 +6,7 @@ export const DivPrincipal = styled.div`
     text-align: center;
     background-color: #5A8199;
     min-height: 120vh;
+    
 `
 
 export const Filtros = styled.section`

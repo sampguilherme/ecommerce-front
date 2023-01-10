@@ -17,15 +17,17 @@ export const Home = (props) => {
     const [maxValue, setMaxValue] = useState("")
     const [orderByValue, setOrderByValue] = useState("")
     
+     
+
     const renderGames = games.filter((game) => {
         return game.name.toLowerCase().includes(search.toLowerCase())
     })
     .filter((game) => {
-        return (game.price >= minValue)
+            return game.price >= minValue
     })
     .filter((game) => {
         if(maxValue >= 1){
-            return game.price <= maxValue
+            return game.price <= maxValue 
         } else if (maxValue < 1) {
             return game.price >= minValue
         }
@@ -67,6 +69,7 @@ export const Home = (props) => {
         key={game.id}
         />
     })
+
 
     return (
         <>

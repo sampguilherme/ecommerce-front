@@ -21,7 +21,7 @@ export const Home = (props) => {
         return game.name.toLowerCase().includes(search.toLowerCase())
     })
     .filter((game) => {
-        return game.price >= minValue
+        return (game.price >= minValue)
     })
     .filter((game) => {
         if(maxValue >= 1){
@@ -104,7 +104,7 @@ export const Home = (props) => {
                             type="text" 
                             onChange={(e) => setSearch(e.target.value)}/>
                             <Button>
-                                <img src={searchIcon}/>
+                                <img src={searchIcon} alt="Search icon"/>
                             </Button>
                 </DivInput>
                 <GamesContainer>

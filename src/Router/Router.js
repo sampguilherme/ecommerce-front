@@ -13,6 +13,7 @@ const Router = (props) => {
                 <Route index element={<Home 
                     addToCart={props.addToCart}
                     games={games}
+                    setGames={setGames}
                     />} />
 
                 <Route path="/cart" element={<Cart 

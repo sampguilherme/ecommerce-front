@@ -3,4 +3,4 @@
 ## Projeto ainda em andamento!!
 
 ## Deploy: 
-https://guilherme-sampaio.surge.sh/
+https://ecommerce-front-k2fe.vercel.app/

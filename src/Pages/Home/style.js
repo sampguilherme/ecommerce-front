@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const DivPrincipal = styled.div`
-    display: grid;
-    grid-template-columns: 16vw 82vw;
+    display: flex;
     text-align: center;
+    
     background-color: #5A8199;
     min-height: 120vh;
     
@@ -17,13 +17,17 @@ export const Filtros = styled.section`
     border-radius: 6px;
     margin-top: 65px;
     margin-left: 30px;
+    margin-right: 16px;
+    width: 12vw;
 `
 
 export const DivFlex = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
     
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1400px;
 `
 
 export const Button = styled.button`
@@ -81,6 +85,7 @@ export const GamesContainer = styled.div`
     justify-content: space-around;
     margin-top: 20px;
     margin-bottom: 20px;
+    
 `
 
 export const DivInput = styled.div`

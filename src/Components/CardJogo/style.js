@@ -15,25 +15,25 @@ export const Button = styled.button`
     }
 `
 
-export const Buttona = styled.button`
-    
-    margin-top: 10px;
-    width: 40px;
-    height: 4vh;
-    background-color: #5B6C7E;
-    border: 0px;
-    border-radius: 0px 8px 8px 0px;
-    &:hover ${Button}{
-        background-color: #9C9C9C;
-    }
-` 
-
 export const CardContainer = styled.section`
-    width: 16vw;
+    width: 300px;
     border-radius: 10px;
     
     box-shadow: 1px 1px 10px black;
     background-color: white;
+
+    @media (max-width: 1200px){
+        width: 250px;
+    }
+
+    @media (max-width: 1000px){
+        width: 190px;
+        p {
+            font-size: 2vh;
+        }
+    }
+
+
 `
 
 export const Image = styled.img`
@@ -55,3 +55,4 @@ export const P = styled.p`
     font-weight: lighter;
     font-size: 2.5vh;
 `
+

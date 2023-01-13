@@ -1,3 +1,4 @@
+import { StatUpArrow } from "@chakra-ui/react";
 import styled from "styled-components";
 
 export const DivPrincipal = styled.div`
@@ -19,8 +20,11 @@ export const DivFlex = styled.div`
 `
 
 export const ButtonI = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
-    height: 4vh;
+    height: 38px;
     background-color: #5B6C7E;
     border: 0px;
     border-radius: 0px 8px 8px 0px;
@@ -30,11 +34,14 @@ export const ButtonI = styled.button`
 ` 
 
 export const InputNome = styled.input`
-    height: 4vh;
+    height: 38px;
     border: 1px solid #5B6C7E;
     width: 16vw;
     padding: 10px;
     border-radius: 8px 0px 0px 8px;
+    @media (max-width: 800px) {
+        width: 28vw;
+    }
 `
 
 export const Carrinho = styled.section`
@@ -62,7 +69,7 @@ export const Select = styled.select`
 export const GamesContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 10px;
     justify-content: space-around;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -72,7 +79,9 @@ export const GamesContainer = styled.div`
 export const DivInput = styled.div`
     display: flex;
     margin-top: 10px;
-    width: 97%;
+    width: 74%;
+    
+    
 `
 
 
@@ -81,3 +90,17 @@ export const H2 = styled.h2`
     font-family: "Inter", sans-serif;
 `
 
+export const Section = styled.section`
+    display: flex;
+    height: 100%;
+    
+    width: 50%;
+    
+`
+
+export const SectionFiltros = styled.section`
+    display: flex;
+    height: 100%;
+    justify-content: end;
+    width: 50%;
+`

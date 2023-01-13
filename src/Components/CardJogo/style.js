@@ -44,6 +44,17 @@ export const CardContainer = styled.section`
         }
     }
 
+    @media (max-width: 350px){
+        width: 140px;
+        height: 240px;
+        p {
+            font-size: 80%;
+        }
+        button {
+            height: 12%;
+        }
+    }
+
 `
 
 export const Image = styled.img`

@@ -11,13 +11,13 @@ export const Button = styled.button`
     background-color: #5B6C7E;
     margin-bottom: 5px;
     &:hover {
-        
+        background-color: #63707c;
     }
 `
 
 export const CardContainer = styled.section`
     width: 300px;
-    border-radius: 10px;
+    border-radius: 13px;
     height: 400px;
     box-shadow: 1px 1px 10px black;
     background-color: white;

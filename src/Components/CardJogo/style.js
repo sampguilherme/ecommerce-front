@@ -35,7 +35,14 @@ export const CardContainer = styled.section`
             font-size: 2vh;
         }
     }
-
+    
+    @media (max-width: 410px){
+        width: 170px;
+        height: 270px;
+        p {
+            font-size: 1.9vh;
+        }
+    }
 
 `
 

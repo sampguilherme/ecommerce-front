@@ -5,7 +5,7 @@ import { useState } from "react"
 import { DivPrincipal, GamesContainer, Input, Select, InputNome, DivFlex, ButtonI, DivInput, Section, SectionFiltros } from "./style"
 import CardJogo from "../../Components/CardJogo/CardJogo.js"
 import searchIcon from "../../Assets/search.svg"
-
+import { BiFilterAlt} from "react-icons/bi";
 import { Button } from "@chakra-ui/react"
 
 import {
@@ -104,11 +104,11 @@ export const Home = (props) => {
                 >
                         <MenuButton 
                             as={Button} 
-                            rightIcon={""}
+                            rightIcon={<BiFilterAlt/>}
                             height={"40px"}
                             borderRadius={"8px"}
                         >
-                            Filtros
+                            Filtros 
                         </MenuButton>
                         <MenuList 
                             display={"flex"}

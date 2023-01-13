@@ -3,36 +3,22 @@ import styled from "styled-components";
 export const DivPrincipal = styled.div`
     display: flex;
     text-align: center;
-    
+    justify-content: center;
     background-color: #5A8199;
     min-height: 120vh;
     
 `
 
-export const Filtros = styled.section`
-    color: white;
-    background-color: #354B59;
-    box-shadow: 0px 6px 20px black;
-    height: 80vh;
-    border-radius: 6px;
-    margin-top: 65px;
-    margin-left: 30px;
-    margin-right: 16px;
-    width: 12vw;
-`
-
 export const DivFlex = styled.div`
     display: flex;
-    
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    max-width: 1400px;
+    width: 1400px;
 `
 
-export const Button = styled.button`
-    
-    margin-top: 10px;
+export const ButtonI = styled.button`
     width: 40px;
     height: 4vh;
     background-color: #5B6C7E;
@@ -44,7 +30,6 @@ export const Button = styled.button`
 ` 
 
 export const InputNome = styled.input`
-    margin-top: 10px;
     height: 4vh;
     border: 1px solid #5B6C7E;
     width: 16vw;
@@ -52,9 +37,6 @@ export const InputNome = styled.input`
     border-radius: 8px 0px 0px 8px;
 `
 
-export const Itens = styled.section`
-    
-`
 export const Carrinho = styled.section`
     background-color: lightgray;
     box-shadow: 0px 6px 20px black;
@@ -62,7 +44,6 @@ export const Carrinho = styled.section`
 `
 
 export const Input = styled.input`
-    width: 95%;
     height: 3vh;
     border: 0px;
     border-radius: 2px;
@@ -90,7 +71,10 @@ export const GamesContainer = styled.div`
 
 export const DivInput = styled.div`
     display: flex;
+    margin-top: 10px;
+    width: 97%;
 `
+
 
 export const H2 = styled.h2`
     margin-top: 10px;

@@ -1,3 +1,4 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import Router from "./Router/Router";
@@ -31,13 +32,13 @@ function App() {
   
 
   return (
-    <>
+    <ChakraProvider>
       <GlobalStyle/>
       <Router 
         addToCart={addToCart}
         cart={cart}
       />
-    </>
+    </ChakraProvider>
   )
 }
 

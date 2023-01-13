@@ -1,10 +1,18 @@
 import React from "react"
 import {Header} from "../../Components/Header/Header"
+
 import { useState } from "react"
-import { DivPrincipal, Filtros, GamesContainer, Input, Select, InputNome, DivFlex, Button, DivInput, H2 } from "./style"
+import { DivPrincipal, GamesContainer, Input, Select, InputNome, DivFlex, ButtonI, DivInput } from "./style"
 import CardJogo from "../../Components/CardJogo/CardJogo.js"
 import searchIcon from "../../Assets/search.svg"
 
+import { Button } from "@chakra-ui/react"
+
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+  } from '@chakra-ui/react'
 
 
 export const Home = (props) => {
@@ -74,41 +82,59 @@ export const Home = (props) => {
     return (
         <>
         <Header/>
+        
         <DivPrincipal>
-            
-            <Filtros>
-                <H2>Filtros</H2>
-                    <Select value={alphabeticalOrder} onChange={(e) => setAlphabeticalOrder(e.target.value)}>
-                        <option value="">Ordem alfabética</option>
-                        <option value="A-Z">A-Z</option>
-                        <option value="Z-A">Z-A</option>
-                    </Select>
-                    <Select value={orderByValue} onChange={(e) => setOrderByValue(e.target.value)}>
-                        <option value="">Ordenar por valor</option>
-                        <option value="crescente">Crescente</option>
-                        <option value="decrescente">Decrescente</option>
-                    </Select>
-                    <Input
-                    placeholder="Valor minimo"
-                    value={minValue} type="Number"
-                    onChange={(e) => setMinValue(e.target.value)}
-                    />
-                    <Input
-                    placeholder="Valor maximo"
-                    value={maxValue} type="Number"
-                    onChange={(e) => setMaxValue(e.target.value)}
-                    />
-            </Filtros>
+           
             <DivFlex>
                 <DivInput>
+                <Menu 
+                    closeOnSelect={false}
+                    
+                >
+                        <MenuButton 
+                            as={Button} 
+                            rightIcon={""}
+                            height={"4vh"}
+                            borderRadius={"8px"}
+                        >
+                            Filtros
+                        </MenuButton>
+                        <MenuList 
+                            display={"flex"}
+                            flexDirection={"column"}
+                        >
+                                <Select value={alphabeticalOrder} onChange={(e) => setAlphabeticalOrder(e.target.value)}>
+                                    <option value="">Ordem alfabética</option>
+                                    <option value="A-Z">A-Z</option>
+                                    <option value="Z-A">Z-A</option>
+                                </Select>
+                            
+                                <Select value={orderByValue} onChange={(e) => setOrderByValue(e.target.value)} closeOnSelect={false}>
+                                    <option value="">Ordenar por valor</option>
+                                    <option value="crescente">Crescente</option>
+                                    <option value="decrescente">Decrescente</option>
+                                </Select>
+                            
+                                <Input
+                                placeholder="Valor minimo"
+                                value={minValue} type="Number"
+                                onChange={(e) => setMinValue(e.target.value)}
+                                />
+                                <Input
+                                placeholder="Valor maximo"
+                                value={maxValue} type="Number"
+                                onChange={(e) => setMaxValue(e.target.value)}
+                                />
+                        </MenuList>
+                    </Menu>
                     <InputNome 
                             placeholder="Nome do Jogo" 
                             value={search}
                             type="text" 
                             onChange={(e) => setSearch(e.target.value)}/>
-                            <Button>
+                            <ButtonI>
                                 <img src={searchIcon} alt="Search icon"/>
-                            </Button>
+                            </ButtonI>
                 </DivInput>
                 <GamesContainer>
                     {renderGames}

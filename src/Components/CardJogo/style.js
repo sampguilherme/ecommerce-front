@@ -18,10 +18,10 @@ export const Button = styled.button`
 export const CardContainer = styled.section`
     width: 300px;
     border-radius: 10px;
-    
+    height: 400px;
     box-shadow: 1px 1px 10px black;
     background-color: white;
-
+    
     @media (max-width: 1200px){
         width: 250px;
     }

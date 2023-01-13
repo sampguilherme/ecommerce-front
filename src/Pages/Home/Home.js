@@ -2,7 +2,7 @@ import React from "react"
 import {Header} from "../../Components/Header/Header"
 
 import { useState } from "react"
-import { DivPrincipal, GamesContainer, Input, Select, InputNome, DivFlex, ButtonI, DivInput } from "./style"
+import { DivPrincipal, GamesContainer, Input, Select, InputNome, DivFlex, ButtonI, DivInput, Section, SectionFiltros } from "./style"
 import CardJogo from "../../Components/CardJogo/CardJogo.js"
 import searchIcon from "../../Assets/search.svg"
 
@@ -87,6 +87,17 @@ export const Home = (props) => {
            
             <DivFlex>
                 <DivInput>
+                <Section>
+                    <InputNome 
+                            placeholder="Nome do Jogo" 
+                            value={search}
+                            type="text" 
+                            onChange={(e) => setSearch(e.target.value)}/>
+                            <ButtonI>
+                                <img src={searchIcon} alt="Search icon"/>
+                            </ButtonI>
+                </Section>
+                <SectionFiltros>
                 <Menu 
                     closeOnSelect={false}
                     
@@ -94,7 +105,7 @@ export const Home = (props) => {
                         <MenuButton 
                             as={Button} 
                             rightIcon={""}
-                            height={"4vh"}
+                            height={"40px"}
                             borderRadius={"8px"}
                         >
                             Filtros
@@ -127,14 +138,7 @@ export const Home = (props) => {
                                 />
                         </MenuList>
                     </Menu>
-                    <InputNome 
-                            placeholder="Nome do Jogo" 
-                            value={search}
-                            type="text" 
-                            onChange={(e) => setSearch(e.target.value)}/>
-                            <ButtonI>
-                                <img src={searchIcon} alt="Search icon"/>
-                            </ButtonI>
+                    </SectionFiltros>
                 </DivInput>
                 <GamesContainer>
                     {renderGames}

@@ -5,7 +5,7 @@ export const HeaderStyled = styled.header`
     background-color: #354B59;
     text-align: center;
     color: white;
-    height: 8vh;
+    height: 80px;
     align-items: center;
     justify-content: space-between;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -15,9 +15,13 @@ export const HeaderStyled = styled.header`
 export const H1 = styled.h1`
     color: white;
     font-family: "Inter", sans-serif;
+    font-size: 2rem;
 `
 
 export const Button = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     background-color: #5B6C7E;

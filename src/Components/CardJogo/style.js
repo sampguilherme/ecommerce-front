@@ -37,10 +37,21 @@ export const CardContainer = styled.section`
     }
     
     @media (max-width: 410px){
-        width: 170px;
-        height: 270px;
+        width: 160px;
+        height: 265px;
         p {
             font-size: 1.9vh;
+        }
+    }
+
+    @media (max-width: 350px){
+        width: 140px;
+        height: 240px;
+        p {
+            font-size: 80%;
+        }
+        button {
+            height: 12%;
         }
     }
 

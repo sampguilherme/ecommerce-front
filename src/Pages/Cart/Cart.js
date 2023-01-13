@@ -3,7 +3,6 @@ import CardCart from "../../Components/CardCart/CardCart"
 import { Header } from "../../Components/Header/Header"
 import { priceFormmater } from "../../utils/priceFormatter"
 import { Main, Div } from "./style"
-import { Button } from "@chakra-ui/react"
 
 // import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react/dist"
 
@@ -30,7 +29,6 @@ export const Cart = (props) => {
                     ))}
                 </Div>
             </section>
-            <Button>Button</Button>
         </Main>
     )
 }

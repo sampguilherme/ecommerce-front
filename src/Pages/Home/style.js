@@ -5,7 +5,7 @@ export const DivPrincipal = styled.div`
     display: flex;
     text-align: center;
     justify-content: center;
-    background-color: #5A8199;
+    background-color: #143249;
     min-height: 120vh;
     
 `
@@ -29,7 +29,7 @@ export const ButtonI = styled.button`
     border: 0px;
     border-radius: 0px 8px 8px 0px;
     &:hover {
-        background-color: #9C9C9C;
+        background-color: #63707c;
     }
 ` 
 
@@ -93,9 +93,7 @@ export const H2 = styled.h2`
 export const Section = styled.section`
     display: flex;
     height: 100%;
-    
     width: 50%;
-    
 `
 
 export const SectionFiltros = styled.section`

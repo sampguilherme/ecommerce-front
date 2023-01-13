@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
     display: flex;
-    background-color: #354B59;
+    background-color: #151D27;
     text-align: center;
     color: white;
     height: 80px;
@@ -28,7 +28,7 @@ export const Button = styled.button`
     border: 0px;
     border-radius: 5px;
     &:hover {
-        background-color: #9C9C9C;
+        background-color: #63707c;
     }
 `
  

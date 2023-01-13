@@ -1,6 +1,6 @@
 import React from "react";
 import { priceFormmater } from "../../utils/priceFormatter";
-import { CardContainer, Image, P } from "./style";
+import { CardContainer, Image, P, DivInfo, H2, DivName, DivPrice, DivQuant } from "./style";
 
 export default function CardCart(props){
     
@@ -9,10 +9,17 @@ export default function CardCart(props){
     return (
         <CardContainer>
             <Image src={games.image} alt={games.name}/>
-            <P>Jogo: {games.name}</P>
-            <P>{priceFormmater.format(games.price)}</P>
-            <span>Quant: </span>
-            <span>{games.quantity}</span>
+            <DivInfo>
+                <DivName>
+                    <H2>{games.name}</H2>
+                </DivName>
+                <DivQuant>
+                    <P>Quant: {games.quantity}</P>
+                </DivQuant>
+                <DivPrice>
+                    <P>{priceFormmater.format(games.price * games.quantity)}</P>
+                </DivPrice>
+            </DivInfo>
         </CardContainer>
     )
 }

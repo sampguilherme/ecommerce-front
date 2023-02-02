@@ -13,10 +13,19 @@ export const CardContainer = styled.section`
         p, h2 {
             font-size: 15px;
         }
+        button {
+            width: 28px;
+            height: 28px;
+        }
     }
     @media (max-width: 400px) {
         p, h2 {
             font-size: 12px;
+        }
+        button {
+            border-radius: 2px;
+            width: 15px;
+            height: 18px;
         }
     }
 `
@@ -28,6 +37,29 @@ export const Image = styled.img`
         width: 25%;
     }
 `
+
+export const ButtonAdd = styled.button`
+    width: 38px;
+    height: 38px;
+    margin-left: 6px;
+    border-radius: 6px;
+    background-color: #EDF2F7;
+    &:hover {
+        background-color: #E2E8F0;
+    }
+`
+export const ButtonRemove = styled.button`
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    margin-right: 6px;
+    background-color: #EDF2F7;
+    &:hover {
+        background-color: #E2E8F0;
+    }
+`
+
+
 
 export const P = styled.p`
     color: black;

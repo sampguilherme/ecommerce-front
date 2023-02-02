@@ -72,3 +72,11 @@ export const H3 = styled.h3`
     font-family: "Inter", sans-serif;
     margin: 0px 10px;
 `
+
+export const EmptyCart = styled.div`
+    display: flex;
+    background-color: white;
+    width: 900px;
+    border-radius: 4px;
+    height: 400px;
+`

@@ -2,6 +2,9 @@ import { ChakraProvider } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import Router from "./Router/Router";
+import { GlobalContext } from "./contexts/GlobalContext";
+import jogos from "./jogos.json"
+import { GlobalState } from "./contexts/GlobalStates";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -12,32 +15,15 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App() {
-  const [cart, setCart] = useState([])
 
-  const addToCart = (productToAdd) => {
-      const newCart = [...cart]
-
-      const productFound = newCart.find((productInCart) => productInCart.id === productToAdd.id)
-
-      if(!productFound){
-        const newProduct = {...productToAdd, quantity: 1}
-        newCart.push(newProduct)
-      } else {
-        productFound.quantity++
-      }
-
-      setCart(newCart)
-  }
-
-  
+  const context = GlobalState()
 
   return (
     <ChakraProvider>
-      <GlobalStyle/>
-      <Router 
-        addToCart={addToCart}
-        cart={cart}
-      />
+      <GlobalContext.Provider value={context}>
+        <GlobalStyle/>
+        <Router/>
+      </GlobalContext.Provider>
     </ChakraProvider>
   )
 }

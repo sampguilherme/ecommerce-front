@@ -1,25 +1,32 @@
-import React from "react"
+import React, { useContext, useEffect, useState } from "react"
 import CardCart from "../../Components/CardCart/CardCart"
 import { Header } from "../../Components/Header/Header"
+import { GlobalContext } from "../../contexts/GlobalContext"
 import { priceFormmater } from "../../utils/priceFormatter"
-import { Main, SectionTop, Div, SectionBottom, DivTotProd, DivValPrice, H3 } from "./style"
+import { Main, SectionTop, Div, SectionBottom, DivTotProd, DivValPrice, H3, EmptyCart } from "./style"
 
 // import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react/dist"
 
-export const Cart = (props) => {
-    const { cart } = props
+export const Cart = () => {
 
-    const total = cart.reduce(
-        (acc, product) => {
-            return product.price * product.quantity + acc
-        },
-        0
-    )
+    const context = useContext(GlobalContext)
+    const { 
+            cart,
+            totalValue
+        } = context
+
+    console.log(cart.length)
 
     return (
         <Main>
             <Header />
-            <section>
+            { cart.length < 1 ? 
+                <Div>
+                    <EmptyCart>
+                        <H3>Seu carrinho está vazio</H3>
+                    </EmptyCart>
+                </Div>
+                :
                 <Div>
                 <SectionTop>
                     <DivTotProd>
@@ -37,11 +44,12 @@ export const Cart = (props) => {
                         <H3>Total</H3>
                     </DivTotProd>
                     <DivValPrice>
-                        <H3>{priceFormmater.format(total)}</H3>
+                        <H3>{priceFormmater.format(totalValue)}</H3>
                     </DivValPrice>
                 </SectionBottom>
                 </Div>
-            </section>
+            }
+                
         </Main>
     )
 }

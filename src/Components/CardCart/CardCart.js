@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { priceFormmater } from "../../utils/priceFormatter";
-import { Button, useConst } from "@chakra-ui/react";
-import { CardContainer, Image, P, DivInfo, H2, DivName, DivPrice, DivQuant, ButtonAdd, ButtonRemove } from "./style";
+import { CardContainer, Image, P, DivInfo, H2, DivName, DivPrice, DivQuant, ButtonAdd, ButtonRemove, DeleteButton } from "./style";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import { BiTrash } from "react-icons/bi";
 
 export default function CardCart(props){
     
@@ -12,7 +12,8 @@ export default function CardCart(props){
     const context = useContext(GlobalContext)
     const {
             cart,
-            calculateTotal
+            calculateTotal,
+            removeFromCart
     } = context
     
     const addQuantity = () => {
@@ -27,6 +28,9 @@ export default function CardCart(props){
         }
     }
 
+    useEffect(() => {
+        calculateTotal()
+    })
 
     return (
         <CardContainer>
@@ -36,7 +40,8 @@ export default function CardCart(props){
                     <H2>{games.name}</H2>
                 </DivName>
                 <DivQuant>
-                    <P>Quant: <ButtonRemove
+                    <P>Quant: </P>
+                    <P> <ButtonRemove
                                 onClick={() => { 
                                     removeQuantity()
                                     calculateTotal()
@@ -56,7 +61,10 @@ export default function CardCart(props){
                     
                 </DivQuant>
                 <DivPrice>
-                    <P>{priceFormmater.format(games.price * gamesQuantity)}</P>
+                    <DeleteButton onClick={() => {
+                        removeFromCart(games)
+                    }}><BiTrash/></DeleteButton>
+                    <P>{priceFormmater.format(games.price * games.quantity)}</P>
                 </DivPrice>
             </DivInfo>
         </CardContainer>

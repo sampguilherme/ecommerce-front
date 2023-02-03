@@ -91,6 +91,13 @@ export const GlobalState = () => {
             />
     })
 
+    const removeFromCart = (gameToRemove) => {
+        const newCart = cart.filter(
+            (gameInCart) => gameInCart.name !== gameToRemove.name
+        )
+        setCart(newCart)
+    }
+
   return {
     cart,
     addToCart,
@@ -109,6 +116,7 @@ export const GlobalState = () => {
     setMaxValue,
     totalValue,
     setTotalValue,
-    calculateTotal
+    calculateTotal,
+    removeFromCart
   }
 }

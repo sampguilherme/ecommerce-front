@@ -1,11 +1,9 @@
 import React, { useContext } from "react"
 import {Header} from "../../Components/Header/Header"
-
-import { useState } from "react"
 import { DivPrincipal, GamesContainer, Input, Select, InputNome, DivFlex, ButtonI, DivInput, Section, SectionFiltros } from "./style"
-import searchIcon from "../../Assets/search.svg"
 import { BiFilterAlt} from "react-icons/bi";
 import { Button } from "@chakra-ui/react"
+import { IoSearchOutline } from "react-icons/io5";
 
 import {
     Menu,
@@ -50,7 +48,7 @@ export const Home = (props) => {
                             type="text" 
                             onChange={(e) => setSearch(e.target.value)}/>
                             <ButtonI>
-                                <img src={searchIcon} alt="Search icon"/>
+                                <IoSearchOutline color="white" fontSize={"26px"}/>
                             </ButtonI>
                 </Section>
                 <SectionFiltros>

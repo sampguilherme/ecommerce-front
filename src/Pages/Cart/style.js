@@ -82,6 +82,30 @@ export const EmptyCart = styled.div`
     height: 400px;
     justify-content: center;
     align-items: center;
+    @media (max-width: 930px){
+         width: 700px;
+    }
+    @media (max-width: 730px) {
+        width: 500px;
+        height: 300px;
+        h2 {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: 530px){
+        width: 390px;
+        height: 190px;
+        h2 {
+            font-size: 18px;
+        }
+    }
+    @media (max-width: 400px){
+        width: 290px;
+        height: 140px;
+        h2 {
+            font-size: 14px;
+        }
+    }
 `
 
 export const H2Empty = styled.h2`

@@ -75,8 +75,19 @@ export const H3 = styled.h3`
 
 export const EmptyCart = styled.div`
     display: flex;
+    flex-direction: column;
     background-color: white;
     width: 900px;
     border-radius: 4px;
     height: 400px;
+    justify-content: center;
+    align-items: center;
+`
+
+export const H2Empty = styled.h2`
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: lighter;
+    font-size: 26px;
+    margin-bottom: 12px;
 `

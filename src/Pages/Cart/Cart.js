@@ -3,7 +3,8 @@ import CardCart from "../../Components/CardCart/CardCart"
 import { Header } from "../../Components/Header/Header"
 import { GlobalContext } from "../../contexts/GlobalContext"
 import { priceFormmater } from "../../utils/priceFormatter"
-import { Main, SectionTop, Div, SectionBottom, DivTotProd, DivValPrice, H3, EmptyCart } from "./style"
+import { Main, SectionTop, Div, SectionBottom, DivTotProd, DivValPrice, H3, EmptyCart, H2Empty } from "./style"
+import { Button } from "@chakra-ui/react"
 
 // import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react/dist"
 
@@ -23,7 +24,8 @@ export const Cart = () => {
             { cart.length < 1 ? 
                 <Div>
                     <EmptyCart>
-                        <H3>Seu carrinho está vazio</H3>
+                        <H2Empty>Ainda não há itens em seu carrinho {":("}</H2Empty>
+                        <Button>VOLTAR PARA O ÍNICIO</Button>
                     </EmptyCart>
                 </Div>
                 :

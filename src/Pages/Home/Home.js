@@ -28,7 +28,6 @@ export const Home = () => {
             setMinValue,
             maxValue,
             setMaxValue,
-            searchButton,
             games
           } = context
 
@@ -48,7 +47,7 @@ export const Home = () => {
                             value={search}
                             type="text" 
                             onChange={(e) => setSearch(e.target.value)}/>
-                            <ButtonI onClick={() => searchButton()}>
+                            <ButtonI>
                                 <IoSearchOutline color="white" fontSize={"26px"}/>
                             </ButtonI>
                 </Section>

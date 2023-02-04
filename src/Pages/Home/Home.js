@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import {Header} from "../../Components/Header/Header"
-import { DivPrincipal, GamesContainer, Input, Select, InputNome, DivFlex, ButtonI, DivInput, Section, SectionFiltros } from "./style"
+import { DivPrincipal, GamesContainer, Input, Select, InputNome, DivFlex, ButtonI, DivInput, Section, SectionFiltros, PNotFound } from "./style"
 import { BiFilterAlt} from "react-icons/bi";
 import { Button } from "@chakra-ui/react"
 import { IoSearchOutline } from "react-icons/io5";
@@ -13,11 +13,10 @@ import {
 import { GlobalContext } from "../../contexts/GlobalContext"
 
 
-export const Home = (props) => {
+export const Home = () => {
 
     const context = useContext(GlobalContext)
     const {
-            games,
             renderGames,
             search,
             setSearch,
@@ -28,10 +27,12 @@ export const Home = (props) => {
             minValue,
             setMinValue,
             maxValue,
-            setMaxValue
+            setMaxValue,
+            searchButton,
+            games
           } = context
-    const {addToCart} = props
 
+    console.log(search.length)
 
     return (
         <>
@@ -47,7 +48,7 @@ export const Home = (props) => {
                             value={search}
                             type="text" 
                             onChange={(e) => setSearch(e.target.value)}/>
-                            <ButtonI>
+                            <ButtonI onClick={() => searchButton()}>
                                 <IoSearchOutline color="white" fontSize={"26px"}/>
                             </ButtonI>
                 </Section>
@@ -96,7 +97,8 @@ export const Home = (props) => {
                 </DivInput>
                 <GamesContainer>
                     {renderGames.length < 1 ? 
-                        <h1>Jogo não encontrado</h1>
+                        <PNotFound>Nenhum jogo encontrado...
+                        </PNotFound>
                         :
                         renderGames
                     }

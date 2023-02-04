@@ -2,14 +2,10 @@ import React, { useContext } from "react"
 import { HeaderStyled, H1, Button } from "./style"
 import { useNavigate } from "react-router-dom"
 import { goToCartPage, goToHomePage } from "../../Router/coordinator"
-import { GlobalContext } from "../../contexts/GlobalContext"
 import { ImHome } from "react-icons/im";
 import { IoCart } from "react-icons/io5";
 
 export const Header = (props) => {
-
-  const context = useContext(GlobalContext)
-  const { calculateTotal } = context
 
   const { isOnCart } = props
 

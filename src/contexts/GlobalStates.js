@@ -116,7 +116,6 @@ export const GlobalState = () => {
     totalValue,
     setTotalValue,
     calculateTotal,
-    removeFromCart,
-    searchButton
+    removeFromCart
   }
 }

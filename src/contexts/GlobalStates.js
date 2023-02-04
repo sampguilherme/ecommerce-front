@@ -40,9 +40,14 @@ export const GlobalState = () => {
       setCart(newCart)
     }
 
+    const searchButton = () => {
+        games.filter((game) => {
+            console.log(game.name.toLowerCase().includes(search.toLowerCase()))
+        })
+    }
+
     const renderGames = games.filter((game) => {
-            
-            return game.name.toLowerCase().includes(search.toLowerCase())
+                return game
         })
         .filter((game) => {
                 return game.price >= minValue
@@ -117,6 +122,7 @@ export const GlobalState = () => {
     totalValue,
     setTotalValue,
     calculateTotal,
-    removeFromCart
+    removeFromCart,
+    searchButton
   }
 }

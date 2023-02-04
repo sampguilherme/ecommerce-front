@@ -102,3 +102,13 @@ export const SectionFiltros = styled.section`
     justify-content: end;
     width: 50%;
 `
+
+export const PNotFound = styled.p`
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    color: white;
+    margin-top: 100px;
+    @media (max-width: 460px){
+        font-size: 20px;
+    }
+`
